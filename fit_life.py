@@ -1,26 +1,45 @@
 # Проект FitLife - MVP версия 1.0
+#Заставляем Python использовать UTF-8 для вывода в консоль
+import sys
+import io
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace")
+sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding="utf-8", errors="replace")
+CONSTANT_ML = 1000
+WATER_PER_KG = 30
 
+print   ("Добро пожаловать в проект FitLife ")
+print("Я ваш помощник по расчету ИМТ и нормы воды")
 
-# 1. Знакомство
-# TODO: Спроси у пользователя имя и сохрани в переменную user_name
-# TODO: Спроси возраст и сохрани в переменную user_age (не забудь преобразовать в число)
+#Знакомство с пользователем
 
+user_name = input("Как тебя зовут ? : ").capitalize()
+user_age = int(input("Сколько тебе лет ? : "))
 
-# 2. Сбор данных
-# TODO: Запроси вес (в кг) и сохрани в user_weight (тип float)
-# TODO: Запроси рост (в метрах, например 1.75) и сохрани в user_height (тип float)
+#Ввод данных о пользователе
 
+user_weight = float(input("Введи свой вес (в кг) : "))
+user_height = float(input("Введи свой рост (в метрах, например 1.75) : "))
 
-# 3. Логика расчетов (Функции как "черный ящик": используем арифметику)
-# Формула ИМТ: вес разделить на (рост в квадрате)
-# TODO: Рассчитай bmi (Индекс массы тела)
+#Расчет ИМТ
 
+def calculate_bmi(weight, height):
+    return weight / (height ** 2)
+bmi = float(calculate_bmi(user_weight, user_height))
+if bmi < 18.5:
+    print(" Y вас недостаточный вес")
+elif bmi > 24.9:
+    print("У вас избыточный вес")
+else:
+    print("Ваш вес в норме")
+print("Ваше ИМТ составляет : {:.1f}".format(bmi))
 
-# Подсчет воды: вес * 30 мл
-# TODO: Рассчитай water_needed
+#Расчет нормы воды
 
+def calculate_water(weight):
+    water_ml = weight * WATER_PER_KG
+    return water_ml
+water_needed = calculate_water(user_weight)/CONSTANT_ML
 
-# 4. Вывод красивого результата
-# TODO: Используй f-строку, чтобы вывести приветствие, например: "Привет, Иван!"
-# TODO: Выведи возраст, ИМТ (округленный до 1 знака) и норму воды.
+print(f"Привет, {user_name}!")
+print(f"Возраст: {user_age}, ИМТ: {round(bmi, 1)}, Норма воды: {water_needed} л")
 print("Расчет окончен. Будьте здоровы!")
