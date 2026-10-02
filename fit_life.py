@@ -3,7 +3,6 @@
 import io
 import sys
 
-
 sys.stdout = io.TextIOWrapper(
     sys.stdout.buffer, encoding="utf-8", errors="replace")
 sys.stderr = io.TextIOWrapper(
@@ -28,7 +27,8 @@ user_height = float(input("Введи свой рост (в метрах, нап
 
 
 def calculate_bmi(weight, height):
-    """Считает индекс массы тела (ИМТ)"""
+
+    """ Считает индекс массы тела (ИМТ) """
     return weight / (height ** 2)
 
 
@@ -43,9 +43,12 @@ print("Ваше ИМТ составляет : {:.1f}".format(bmi))
 
 # Расчет нормы воды
 
+
 def calculate_water(weight):
-    """Считает норму воды в миллилитрах на основе веса тела"""
+
+    """ Считает норму воды в миллилитрах на основе веса тела """
     return weight * WATER_PER_KG
+
 water_needed = calculate_water(user_weight)/CONSTANT_ML
 
 
