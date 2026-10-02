@@ -50,6 +50,6 @@ water_needed = calculate_water(user_weight)/CONSTANT_ML
 
 
 print(f"Привет, {user_name}!")
-print(f"Возраст: {user_age},
- ИМТ: {round(bmi, 1)}, Норма воды: {water_needed} л")
+print(f"Возраст: {user_age},ИМТ: {round(bmi, 1)}")
+print(f"Норма воды: {water_needed} л")
 print("Расчет окончен. Будьте здоровы!")
