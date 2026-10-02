@@ -11,7 +11,7 @@ CONSTANT_ML = 1000
 WATER_PER_KG = 30
 
 print("Добро пожаловать в проект FitLife ")
-print("Я ваш помощник по расчету ИМТ и нормы воды")
+print("Я ваш помощник по расчету ИМТ и нормы воды.")
 
 # Знакомство с пользователем
 
@@ -27,8 +27,7 @@ user_height = float(input("Введи свой рост (в метрах, нап
 
 
 def calculate_bmi(weight, height):
-
-    """ Считает индекс массы тела (ИМТ) """
+    """Считает индекс массы тела (ИМТ)."""
     return weight / (height ** 2)
 
 
@@ -45,11 +44,10 @@ print("Ваше ИМТ составляет : {:.1f}".format(bmi))
 
 
 def calculate_water(weight):
-
-    """ Считает норму воды в миллилитрах на основе веса тела """
+    """Считает норму воды в миллилитрах на основе веса тела."""
     return weight * WATER_PER_KG
 
-water_needed = calculate_water(user_weight)/CONSTANT_ML
+water_needed = calculate_water(user_weight) / CONSTANT_ML
 
 
 print(f"Привет, {user_name}!")
