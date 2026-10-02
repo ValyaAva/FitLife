@@ -1,7 +1,8 @@
 # Проект FitLife - MVP версия 1.0
 # Заставляем Python использовать UTF-8 для вывода в консоль
-import sys
 import io
+import sys
+
 
 sys.stdout = io.TextIOWrapper(
     sys.stdout.buffer, encoding="utf-8", errors="replace")
@@ -42,7 +43,6 @@ print("Ваше ИМТ составляет : {:.1f}".format(bmi))
 
 # Расчет нормы воды
 
-
 def calculate_water(weight):
     """Считает норму воды в миллилитрах на основе веса тела"""
     return weight * WATER_PER_KG
@@ -50,5 +50,6 @@ water_needed = calculate_water(user_weight)/CONSTANT_ML
 
 
 print(f"Привет, {user_name}!")
-print(f"Возраст: {user_age}, ИМТ: {round(bmi, 1)}, Норма воды: {water_needed} л")
+print(f"Возраст: {user_age},
+ ИМТ: {round(bmi, 1)}, Норма воды: {water_needed} л")
 print("Расчет окончен. Будьте здоровы!")
