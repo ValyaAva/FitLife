@@ -47,6 +47,7 @@ def calculate_water(weight):
     """Считает норму воды в миллилитрах на основе веса тела."""
     return weight * WATER_PER_KG
 
+
 water_needed = calculate_water(user_weight) / CONSTANT_ML
 
 
